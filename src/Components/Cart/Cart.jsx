@@ -8,6 +8,7 @@ export default function Cart() {
   const [cart, setCart] = useState({})
   const [timeOutId, setTimeOutId] = useState()
   const [isLoading, setIsLoading] = useState(true); 
+  const [cartId, setCartId] = useState()
 
   async function getLoggedInCartProducts() {
     try {
@@ -18,6 +19,7 @@ export default function Cart() {
       })
 
       console.log(data);
+      setCartId(data.data._id)
       setCart(data)
       setIsLoading(false);
     } catch (error) {
@@ -92,7 +94,7 @@ export default function Cart() {
             />
           ))}
               <div className='d-flex justify-content-between'>
-                <Link to={`/address/${cart.data._id}`} className='btn bg-main text-white'>CheckOut</Link>
+                <Link to={`/address/`+ cartId} className='btn bg-main text-white'>CheckOut</Link>
                 <p>Total cart Price: {cart.data.totalCartPrice} EGP</p>
               </div>
             </div>
