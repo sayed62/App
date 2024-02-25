@@ -27,8 +27,8 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: 'App', element: <Layout />, children: [
-        { path: '', element: <Navigate to={'home'} /> },
+      path: '', element: <Layout />, children: [
+        { path: 'App', element: <Navigate to={'home'} /> },
         { path: 'register', element: <AuthProtectedRoute>  <Register /> </AuthProtectedRoute> },
         { path: 'login', element: <AuthProtectedRoute>  <Login /> </AuthProtectedRoute> },
         { path: 'forgot-password', element: <AuthProtectedRoute>  <ForgotPassword/> </AuthProtectedRoute> },
@@ -36,7 +36,7 @@ function App() {
         { path: 'update-password', element: <AuthProtectedRoute>  <ResetPassword/> </AuthProtectedRoute> },
 
 
-        { path: 'home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
+        { path: 'App/:home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
         { path: 'products', element: <ProtectedRoute>  <Products /> </ProtectedRoute> },
         { path: 'cart', element: <ProtectedRoute> <Cart /> </ProtectedRoute> },
         { path: 'categories', element: <ProtectedRoute> <Categories /> </ProtectedRoute> },
