@@ -36,7 +36,7 @@ function App() {
         { path: 'update-password', element: <AuthProtectedRoute>  <ResetPassword/> </AuthProtectedRoute> },
 
 
-        { path: 'App/:home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
+        { path: 'App/:App', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
         { path: 'products', element: <ProtectedRoute>  <Products /> </ProtectedRoute> },
         { path: 'cart', element: <ProtectedRoute> <Cart /> </ProtectedRoute> },
         { path: 'categories', element: <ProtectedRoute> <Categories /> </ProtectedRoute> },
