@@ -31,6 +31,7 @@ function App() {
         { path: 'App', element: <Navigate to={'home'} /> },
         { path: 'register', element: <AuthProtectedRoute>  <Register /> </AuthProtectedRoute> },
         { path: 'login', element: <AuthProtectedRoute>  <Login /> </AuthProtectedRoute> },
+        { path: 'home', element: <AuthProtectedRoute>  <Home /> </AuthProtectedRoute> },
         { path: 'forgot-password', element: <AuthProtectedRoute>  <ForgotPassword/> </AuthProtectedRoute> },
         { path: 'reset-code', element: <AuthProtectedRoute>  <VerifyResetCode/> </AuthProtectedRoute> },
         { path: 'update-password', element: <AuthProtectedRoute>  <ResetPassword/> </AuthProtectedRoute> },
