@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import CategoriesSlider from '../CategoriesSlider/CategoriesSlider';
 
+
 export default function Home() {
 
   const [products, setProducts] = useState([])
