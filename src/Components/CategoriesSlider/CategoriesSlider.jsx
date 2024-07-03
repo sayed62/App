@@ -1,18 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Slider from "react-slick";
+import imdSlider1 from "../../Assets/images/grocery-banner-2.jpeg";
+import imdSlider2 from '../../Assets/images/grocery-banner.png';
+import imdSlider3 from '../../Assets/images/slider-image-1.jpeg';
+import imdSlider4 from '../../Assets/images/slider-2.jpeg';
+import imdSlider5 from '../../Assets/images/slider-image-3.jpeg';
 
 export default function CategoriesSlider() {
 
     const [categories, setCategories] = useState([])
 
     var settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 7,
-        slidesToScroll: 7,
-        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     };
 
     async function getAllCategories() {
@@ -28,13 +32,18 @@ export default function CategoriesSlider() {
 
 
     return (
-        <Slider {...settings} >
-            {categories.map((category, index) => {
-                return <div key={index}>
-                    <img style={{height: 200}} src={category.image} className='w-100' alt="" />
-                    <h5>{category.name}</h5>
-                </div>
-            })}
+        <div class="row g-0">
+        <div className="col-md-8">
+        <Slider {...settings}>
+        <img src={imdSlider3} class="w-100" alt='imgSlider' height={500}/>
+        <img src={imdSlider4} class="w-100" alt='imgSlider' height={500}/>
+        <img src={imdSlider5} class="w-100" alt='imgSlider' height={500}/>
         </Slider>
-    )
+        </div>
+        <div className="col-md-4">
+        <img src={imdSlider1} class="w-100" alt='imgSlider' height={250}/>
+        <img src={imdSlider2} class="w-100" alt='imgSlider' height={250}/>
+        </div>
+        </div>
+        )
 }
